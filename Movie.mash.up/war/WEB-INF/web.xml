@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>com.movie.mash.up.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/movie_mash_up/greet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>movieListServlet</servlet-name>
+    <servlet-class>com.movie.mash.up.server.MovieListServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>movieListServlet</servlet-name>
+    <url-pattern>/movie_mash_up/movielist</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>JsonMovieData</servlet-name>
+    <servlet-class>com.movie.mash.up.server.JsonMovieData</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>JsonMovieData</servlet-name>
+    <url-pattern>/movies/movieList</url-pattern>
+  </servlet-mapping>
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Movie_mash_up.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

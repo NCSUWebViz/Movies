@@ -1,0 +1,275 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--                                                               -->
+<!-- Consider inlining CSS to reduce the number of requested files -->
+<!--                                                               -->
+<!-- <link type="text/css" rel="stylesheet" href="Movie_mash_up.css"> -->
+<link type="text/css" rel="stylesheet" href="style.css">
+<!--                                           -->
+<!-- Any title is fine                         -->
+<!--                                           -->
+<title>Web Application Starter Project</title>
+
+<script type="text/javascript" language="javascript"
+	src="movie_mash_up/jquery.js"></script>
+<script type="text/javascript" language="javascript"
+	src="movie_mash_up/jquery.carouFredSel-5.2.3-packed.js"></script>
+
+<script>
+	$(function() {
+		//Scrolled by user interaction
+		/* $("#foo2").carouFredSel({
+			
+			circular: false,
+			infinite: false,
+			auto : false,
+			
+			
+			prev : {	
+				button	: "#foo2_prev"
+				key		: "left"
+			},
+			next : { 
+				button	: "#foo2_next"
+				key		: "right" 
+			},
+			pagination	: "#foo2_pag"
+			
+		}); */
+
+		/* $("#foo2").carouFredSel({
+			items : 11,
+			auto : false,
+			prev : "#foo2_prev",
+			next : "#foo2_next",
+			scroll : {
+				items : 1,
+				duration : 1500
+			}
+		}); */
+		
+		
+/* 		$("#foo1").carouFredSel({
+			items : {
+				visible			: 3,
+			},
+			scroll : {
+				items			: 1,
+				duration		: 1000,
+				pauseDuration	: 2000,
+				onBefore		: function(oldItems, newItems, newSizes, duration) {
+					$("#foo1").parent().parent().animate({ paddingLeft: (950 - newSizes.width) / 2 }, duration);
+				}
+			},
+			auto	: false,
+			prev	: "#foo1_prev",
+			next	: "#foo1_next"
+		}).parent().parent().css({ 
+			paddingLeft: (950 - $("#foo1").parent().outerWidth()) / 2 
+		});
+ */
+ 
+ function highlight( items ) {
+		items.filter(":eq(5)").css({
+			backgroundColor: "#ff9",
+			width	: 80,
+			height	: 120,
+			padding : 4
+		});
+		
+	}
+	function unhighlight( items ) {
+		items.css({
+			backgroundColor: "#FFF",
+			width	: 80,
+			height	: 120,
+			margin	: 2,
+			padding : 0
+		});
+	}
+
+ 
+		$("#foo1").carouFredSel({
+			auto	: {
+				items 			: 1,
+				duration		: 10,
+				easing			: "linear",
+				pauseDuration	: 0,
+				onBefore: function(oldItems, newItems) {
+					unhighlight( oldItems );
+				},
+				onAfter	: function(oldItems, newItems) {
+					highlight( newItems );
+				}
+			}
+		}).trigger("pause");
+
+		$("#foo1_prev").hover(function() {
+			$("#foo1").trigger("configuration", ["direction", "left"]);
+			$("#foo1").trigger("play");
+		}, function() {
+			$("#foo1").trigger("pause");
+		}).click(function() {
+			return false;
+		});
+
+		$("#foo1_next").hover(function() {
+			$("#foo1").trigger("configuration", ["direction", "right"]);
+			$("#foo1").trigger("play");
+		}, function() {
+			$("#foo1").trigger("pause");
+		}).click(function() {
+			return false;
+		});
+
+ 
+	});
+</script>
+
+
+
+<script src='style/prettify.js'></script>
+
+<link href="style/prettify.css" rel="stylesheet" type="text/css" />
+<script>
+	Event.observe(window, 'load', function() {
+		prettyPrint()
+	});
+</script>
+<link href="style/distant-planet.css" rel="stylesheet" type="text/css" />
+<link href="style/box2d.css" rel="stylesheet" type="text/css" />
+
+<!--                                           -->
+<!-- This script loads your compiled module.   -->
+<!-- If you add any GWT meta tags, they must   -->
+<!-- be added before this line.                -->
+<!--                                           -->
+<script type="text/javascript" language="javascript"
+	src="movie_mash_up/movie_mash_up.nocache.js"></script>
+
+
+</head>
+
+<!--                                           -->
+<!-- The body can have arbitrary html, or      -->
+<!-- you can leave the body empty if you want  -->
+<!-- to create a completely dynamic UI.        -->
+<!--                                           -->
+<body style="background: #000 url('images/html_bg.png')">
+
+		<div id="navigation">
+		<div class="left"></div>
+		<ul>
+			<li><a href="#">Movie Review</a>
+			</li>
+
+			<li><a href="#">Movie Ratings</a>
+			</li>
+			<li><a href="#">Movie Review &amp; Ratings</a>
+			</li>
+			<li><a href="#">About</a>
+			</li>
+			<li><a href="#">Help</a>
+			</li>
+			<li><a href="#">Course Web Page</a>
+			</li>
+			<li class="last"><a href="#">Team</a>
+			<li id="textBox"></li>
+			<li id="addButton"></li>
+
+		</ul>
+		<div class="right">
+			<!-- <div id="textBox"></div>
+			<div id="addButton"></div> -->
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="image_carousel">
+			<div id="foo1">
+				 <img src="images/flower.png" /> <img src="images/flower.png" /> <img src="images/flower.png" />
+				<img src="images/m.png" onclick="reset();" /> <img src="images/o.png" /> <img src="images/v.png" /> <img src="images/i.png" />
+				<img src="images/z.png" /> <img src="images/flower.png" /> <img src="images/flower.png" /> <img src="images/flower.png" />
+				<img src="images/flower.png" />
+				<!-- <img
+					src="http://content8.flixster.com/movie/16/90/53/1690530_pro.jpg"
+					alt="basketball" /> <img
+					src="http://content8.flixster.com/movie/16/90/53/1690530_pro.jpg"
+					alt="basketball" /><img
+					src="http://content8.flixster.com/movie/16/90/53/1690530_pro.jpg"
+					alt="basketball" /> <img
+					src="http://content8.flixster.com/movie/16/90/53/1690530_pro.jpg"
+					alt="basketball" /> <img
+					src="http://content8.flixster.com/movie/16/90/53/1690530_pro.jpg"
+					alt="basketball" /> -->
+				<!-- <img
+					src="#" 
+					 /> 
+					 <img
+					src="#" alt="cupcackes"
+					 /> <img
+					src="#" alt="hangmat" 
+					 /> <img src="/examples/images/small/new_york.jpg"
+					alt="new york"  /> <img
+					src="#" alt="laundry" 
+					 /> <img src="/examples/images/small/mom_son.jpg"
+					alt="mom son"  /> <img
+					src="#" alt="picknick"
+					 /> 
+					 <img
+					src="#" alt="shoes" 
+					 /> -->
+				<!--  <img src="/examples/images/small/paris.jpg"
+					alt="paris"  />
+					 <img
+					src="#" alt="sunbading"
+					  /> 
+					  <img
+					src="#" alt="yellow couple"
+					  /> -->
+			</div>
+			<div class="clearfix"></div>
+			<a class="prev" id="foo1_prev" href="#"><span>prev</span> </a> 
+			<a class="next" id="foo1_next" href="#"><span>next</span> </a>
+			<a class="rotten" href="#"></a>
+		</div>
+		<div id="arrow" class="arrow"><a class="fresh" href="#"></a></div>
+
+	</div>
+
+
+
+
+
+	<div id="canvas" style="top: 250px; left: 100px;"></div>
+	<script src="js/protoclass.js"></script>
+	<script src='js/box2d.js'></script>
+	<script src='js/main.js'></script>
+
+
+
+	<!-- 
+    OPTIONAL: include this if you want history support
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    
+    RECOMMENDED if your web app will not function without JavaScript enabled
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <div id="movieList">
+    	
+    </div> -->
+
+</body>
+</html>

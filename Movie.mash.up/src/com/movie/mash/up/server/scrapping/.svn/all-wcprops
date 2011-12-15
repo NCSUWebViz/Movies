@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/kulkarnianil_movies/!svn/ver/82/Movie.mash.up/src/com/movie/mash/up/server/scrapping
+END
+MovieScrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kulkarnianil_movies/!svn/ver/78/Movie.mash.up/src/com/movie/mash/up/server/scrapping/MovieScrapper.java
+END
+MovieMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/kulkarnianil_movies/!svn/ver/82/Movie.mash.up/src/com/movie/mash/up/server/scrapping/MovieMap.java
+END
+RTMovieURLMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/kulkarnianil_movies/!svn/ver/82/Movie.mash.up/src/com/movie/mash/up/server/scrapping/RTMovieURLMap.java
+END
+IMDBMovieURLMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/kulkarnianil_movies/!svn/ver/82/Movie.mash.up/src/com/movie/mash/up/server/scrapping/IMDBMovieURLMap.java
+END
+RottenTomatoesJsonMovie.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/kulkarnianil_movies/!svn/ver/23/Movie.mash.up/src/com/movie/mash/up/server/scrapping/RottenTomatoesJsonMovie.java
+END
+RottenTomatoesJsonMovieList.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/kulkarnianil_movies/!svn/ver/23/Movie.mash.up/src/com/movie/mash/up/server/scrapping/RottenTomatoesJsonMovieList.java
+END
+RottenTomatoesJsonMovieRating.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/kulkarnianil_movies/!svn/ver/23/Movie.mash.up/src/com/movie/mash/up/server/scrapping/RottenTomatoesJsonMovieRating.java
+END
