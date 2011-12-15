@@ -1,0 +1,24 @@
+Installation Guide
+1) You can check out the source files of our project moviz at https://github.com/NCSUWebViz/Movies.
+2) Our repository is at : git@github.com:NCSUWebViz/Movies.git. 
+3) You can download the entire repository as Zip. 
+4) Once downloaded (it might take time as there are a lot of files ).
+5) Make sure you have Eclipse (> 3.5) with Java configured. 
+6) Install latest Google Web Toolkit and Google App Engine (> 1.5.5) 
+7) Restart your eclipse instance.
+8) Import the project from the zip file (movie.mash.up) into your workspace. 
+9) Run the project as Web application ( Check for  build path / compile configurations if errors reported on the console). 
+10) You should be able to access the application on local host.
+
+Deployment 
+
+1) We have deployed our project on Google App Engine. 
+2) In Google App Engine, there is a notion of Data store which the way we understand is a simple service which we can
+use to do basic CRUD operations at the database layer.
+3) There is an issue of  migration of local to remote data store and hence there will be very few movies available(We
+have been deploying our code frequently and what we have noticed is sometimes datastore gets erased for no reason . This
+can be a issue and you might not not have any movies to check ) 
+4) You can check our project here : http://webvisualization.appspot.com/
+5) We have mostly used Google Chrome for all our UI testing and we would strongly recommend to use this browser. 
+
+*Note : Please let one us know if you have any hurdles during any of the steps , we should be able to give some pointers. 
